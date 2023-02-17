@@ -1,8 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using test;
 using test.Data;
-using test.Interfaces;
-using test.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddTransient<test.Seed>();
-builder.Services.AddScoped<ICarRepository, CarRepository>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

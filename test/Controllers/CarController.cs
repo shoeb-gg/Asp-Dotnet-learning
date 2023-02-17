@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using test.Data;
-using test.Interfaces;
 using test.Models;
-using test.Repository;
 
 namespace test.Controllers
 {
