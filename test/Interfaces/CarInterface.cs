@@ -7,7 +7,10 @@ namespace test.Interfaces
         ICollection<Car> GetCars();
 
         Car GetCarById(int id);
+        bool CreateCar(Car car);
         bool CarExists(int carId);
+
+        bool Save();
 
     }
 }
