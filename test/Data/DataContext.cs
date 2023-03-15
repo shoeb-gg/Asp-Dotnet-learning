@@ -11,11 +11,7 @@ namespace test.Data
 
         }
 
-        public DbSet<Car> Cars { get; set; }
+        public DbSet<Product> Products { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            //modelBuilder.Entity<Car>().HasKey(c =>  c.CarId );
-        }
     }
 }

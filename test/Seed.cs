@@ -14,30 +14,20 @@ namespace test
 
         public void SeedDataContext()
         {
-            if (!dataContext.Cars.Any())
+            if (!dataContext.Products.Any())
             {
-                var cars  = new List<Car>()
+                var products = new List<Product>()
                 {
-                    new Car()
+                    new Product()
                     {
-                        Name = "Tesla Model S Plaid",
-                        HorsePower = 1020,
-                        Torque = 800
-                    },
-                    new Car()
-                    {
-                        Name = "Toyota Prius 2021",
-                        HorsePower = 120,
-                        Torque = 90
-                    },
-                    new Car()
-                    {
-                        Name = "Porsche 911 Turbo S",
-                        HorsePower = 1020,
-                        Torque = 800
+                        Name = "Iphone 14 Pro Max",
+                        Brand = "Apple",
+                        Description = "Overpriced Handcuff",
+                        Price = 999,
+                        ImageUrl = "https://adminapi.applegadgetsbd.com/storage/media/large/iPhone-14-Pro-Max-Space-Black-6723.jpg"
                     }
                 };
-                dataContext.Cars.AddRange(cars);
+                dataContext.Products.AddRange(products);
                 dataContext.SaveChanges();
             }
         }
