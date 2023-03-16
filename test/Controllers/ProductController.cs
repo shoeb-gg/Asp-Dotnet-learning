@@ -40,6 +40,20 @@ namespace test.Controllers
             return Ok("Product Created !");
         }
 
+        [HttpPost("multiple")]
+        public async Task<ActionResult<List<Product>>> CreateCarMultiple([FromBody] Product[] productCreateArray)
+        {
+            IList<Product> newProducts = productCreateArray;
+            //foreach (var product in productCreateArray)
+            //{
+                _context.Products.AddRange(newProducts);
+            //}
+
+            await _context.SaveChangesAsync();
+            return Ok("All Products Created !");
+        }
+
+
         [HttpPut]
         public async Task<ActionResult<List<Product>>> UpdateCare([FromBody] Product productUpdate)
         {
@@ -68,7 +82,5 @@ namespace test.Controllers
             await _context.SaveChangesAsync();
             return Ok("Product Deleted !");
         }
-
-
     }
 }
